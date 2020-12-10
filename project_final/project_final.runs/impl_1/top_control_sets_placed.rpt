@@ -1,0 +1,92 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Thu Dec 10 13:59:12 2020
+| Host         : ECE-PHO115-21 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7a100t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    14 |
+|    Minimum number of control sets                        |    14 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    71 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    14 |
+| >= 0 to < 4        |     2 |
+| >= 4 to < 6        |     1 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     3 |
+| >= 10 to < 12      |     2 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     5 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              29 |           13 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             127 |           33 |
+| Yes          | No                    | No                     |              37 |           13 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-------------------+---------------------------+-------------------------------+------------------+----------------+
+|    Clock Signal   |       Enable Signal       |        Set/Reset Signal       | Slice Load Count | Bel Load Count |
++-------------------+---------------------------+-------------------------------+------------------+----------------+
+|  topclk_IBUF_BUFG |                           |                               |                2 |              2 |
+|  m3/m2/CLK        |                           |                               |                1 |              3 |
+|  clk_BUFG         |                           | collisionFound                |                1 |              4 |
+|  m4/CLK           |                           |                               |                3 |              6 |
+|  clk_BUFG         | m1/xMax                   |                               |                3 |              9 |
+|  clk_BUFG         | ballY                     |                               |                3 |              9 |
+|  m2/CLK           | paddlePosition[8]_i_1_n_0 |                               |                3 |              9 |
+|  clk_BUFG         |                           | m1/xMax                       |                3 |             10 |
+|  clk_BUFG         | ballX                     |                               |                4 |             10 |
+|  clk_BUFG         |                           |                               |                7 |             18 |
+|  topclk_IBUF_BUFG |                           | m2/second_count[0]_i_1_n_0    |                7 |             27 |
+|  topclk_IBUF_BUFG |                           | m4/second_count[0]_i_1__0_n_0 |                7 |             27 |
+|  topclk_IBUF_BUFG |                           | m0/clear                      |                7 |             28 |
+|  topclk_IBUF_BUFG |                           | m3/m2/refresh                 |                8 |             31 |
++-------------------+---------------------------+-------------------------------+------------------+----------------+
+
+
